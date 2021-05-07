@@ -23,13 +23,14 @@ Made by @FayasNoushad
 """
 HELP_TEXT = """
 <u><b>Steps :-</b></u>
-- Just send a message
+- Just send a html or markdown message
 - Reply a link for attaching
 
 <u><b>Tips :-</b></u>
-• Use @FnTelegraphBot for telegraph links of photos and videos 
+• Use @FnTelegraphBot for telegraph links of photos and videos
 • Use Telegram public channel or group message links
 • You can send any type of links for attaching
+
 Made by @FayasNoushad
 """
 ABOUT_TEXT = """
