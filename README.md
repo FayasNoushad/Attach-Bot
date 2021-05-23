@@ -11,14 +11,18 @@ License -> https://github.com/FayasNoushad/Attach-Bot/blob/main/LICENSE
 
 ## Deploy 
 
-### Deploy on Heroku
+<details>
+  <summary><b>Deploy on Heroku</b></summary>
 <p align="left">
   <a href="https://heroku.com/deploy?template=https://github.com/FayasNoushad/Attach-Bot/tree/main">
      <img height="30px" src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku">
   </a>
 </p>
 
-### Deploy in your vps
+</details>
+
+<details>
+  <summary><b>Deploy in your vps</b></summary>
 ```sh
 git clone https://github.com/FayasNoushad/Attach-Bot/tree/main
 cd Attach-Bot
@@ -26,6 +30,8 @@ pip3 install -r requirements.txt
 # <Create Variables appropriately>
 python3 bot.py
 ```
+
+</details>
 
 ## Variables
 * `API_HASH` Your API Hash from my.telegram.org
