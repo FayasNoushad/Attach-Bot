@@ -30,7 +30,7 @@ git clone https://github.com/FayasNoushad/Attach-Bot/tree/main
 cd Attach-Bot
 pip3 install -r requirements.txt
 # <Create Variables appropriately>
-python3 bot.py
+python3 main.py
 ```
 
 </details>
