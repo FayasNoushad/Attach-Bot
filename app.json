@@ -6,6 +6,7 @@
         "attach bot",
         "file or media",
         "messages",
+        "pyrogram",
         "telegram bot"
     ],
     "env": {
