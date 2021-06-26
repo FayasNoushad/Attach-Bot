@@ -5,7 +5,6 @@ A telegram file or media in a message using their links attach bot.
 ---
 
 ```
-Please fork this repository don't import code
 Made with Python3
 (C) @FayasNoushad
 Copyright permission under MIT License
