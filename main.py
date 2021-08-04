@@ -114,7 +114,7 @@ async def about(bot, update):
         reply_markup=ABOUT_BUTTONS
     )
 
-@FayasNoushad.on_message(filters.text & filters.private & filters.reply & filters.regex(pattern=".*http.*"))
+@FayasNoushad.on_message(filters.text & filters.private & filters.reply & filters.regex(r'https?://[^\s]+'))
 async def attach(bot, update):
     await update.reply_text(
         text=f"[\u2063]({update.text}){update.reply_to_message.text}",
