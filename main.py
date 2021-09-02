@@ -9,12 +9,14 @@ import pyrogram
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
+
 Bot = Client(
     "Telegram Attach Bot",
     bot_token = os.environ["BOT_TOKEN"],
     api_id = int(os.environ["API_ID"]),
     api_hash = os.environ["API_HASH"]
 )
+
 
 START_TEXT = """
 Hello {}, I am a media or file in a message attach bot. I can attach photo, video, audio etc. using their public links in a message.
@@ -67,6 +69,7 @@ ABOUT_BUTTONS = InlineKeyboardMarkup(
         ]]
     )
 
+
 @Bot.on_callback_query()
 async def cb_handler(bot, update):
     if update.data == "home":
@@ -90,6 +93,7 @@ async def cb_handler(bot, update):
     else:
         await update.message.delete()
 
+
 @Bot.on_message(filters.private & filters.command(["start"]))
 async def start(bot, update):
     await update.reply_text(
@@ -97,6 +101,7 @@ async def start(bot, update):
         disable_web_page_preview=True,
         reply_markup=START_BUTTONS
     )
+
 
 @Bot.on_message(filters.private & filters.command(["help"]))
 async def help(bot, update):
@@ -106,6 +111,7 @@ async def help(bot, update):
         reply_markup=HELP_BUTTONS
     )
 
+
 @Bot.on_message(filters.private & filters.command(["about"]))
 async def about(bot, update):
     await update.reply_text(
@@ -114,11 +120,13 @@ async def about(bot, update):
         reply_markup=ABOUT_BUTTONS
     )
 
+
 @Bot.on_message(filters.text & filters.private & filters.reply & filters.regex(r'https?://[^\s]+'))
 async def attach(bot, update):
     await update.reply_text(
         text=f"[\u2063]({update.text}){update.reply_to_message.text}",
         reply_markup=update.reply_to_message.reply_markup
     )
+
 
 Bot.run()
