@@ -9,7 +9,7 @@ import pyrogram
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-FayasNoushad = Client(
+Bot = Client(
     "Telegram Attach Bot",
     bot_token = os.environ["BOT_TOKEN"],
     api_id = int(os.environ["API_ID"]),
@@ -67,7 +67,7 @@ ABOUT_BUTTONS = InlineKeyboardMarkup(
         ]]
     )
 
-@FayasNoushad.on_callback_query()
+@Bot.on_callback_query()
 async def cb_handler(bot, update):
     if update.data == "home":
         await update.message.edit_text(
@@ -90,7 +90,7 @@ async def cb_handler(bot, update):
     else:
         await update.message.delete()
 
-@FayasNoushad.on_message(filters.private & filters.command(["start"]))
+@Bot.on_message(filters.private & filters.command(["start"]))
 async def start(bot, update):
     await update.reply_text(
         text=START_TEXT.format(update.from_user.mention),
@@ -98,7 +98,7 @@ async def start(bot, update):
         reply_markup=START_BUTTONS
     )
 
-@FayasNoushad.on_message(filters.private & filters.command(["help"]))
+@Bot.on_message(filters.private & filters.command(["help"]))
 async def help(bot, update):
     await update.reply_text(
         text=HELP_TEXT,
@@ -106,7 +106,7 @@ async def help(bot, update):
         reply_markup=HELP_BUTTONS
     )
 
-@FayasNoushad.on_message(filters.private & filters.command(["about"]))
+@Bot.on_message(filters.private & filters.command(["about"]))
 async def about(bot, update):
     await update.reply_text(
         text=ABOUT_TEXT,
@@ -114,11 +114,11 @@ async def about(bot, update):
         reply_markup=ABOUT_BUTTONS
     )
 
-@FayasNoushad.on_message(filters.text & filters.private & filters.reply & filters.regex(r'https?://[^\s]+'))
+@Bot.on_message(filters.text & filters.private & filters.reply & filters.regex(r'https?://[^\s]+'))
 async def attach(bot, update):
     await update.reply_text(
         text=f"[\u2063]({update.text}){update.reply_to_message.text}",
         reply_markup=update.reply_to_message.reply_markup
     )
 
-FayasNoushad.run()
+Bot.run()
