@@ -1,9 +1,3 @@
-# Made with python3
-# (C) @FayasNoushad
-# Copyright permission under MIT License
-# All rights reserved by FayasNoushad
-# License -> https://github.com/FayasNoushad/Attach-Bot/blob/main/LICENSE
-
 import os
 import pyrogram
 from pyrogram import Client, filters
@@ -18,24 +12,23 @@ Bot = Client(
 )
 
 
-START_TEXT = """
-Hello {}, I am a media or file in a message attach bot. I can attach photo, video, audio etc. using their public links in a message.
+START_TEXT = """Hello {},
+I am a media or file in a message attach bot. I can attach photo, video, audio etc. using their public links in a message.
 
-Made by @FayasNoushad
-"""
-HELP_TEXT = """
-<u><b>Steps :-</b></u>
+Made by @FayasNoushad"""
+HELP_TEXT = """**More Help**
+
+**Steps :-**
 - Just send a html or markdown message
 - Reply a link for attaching
 
-<u><b>Tips :-</b></u>
-• Use @FnTelegraphBot for telegraph links of photos and videos
+**Tips :-**
 • Use Telegram public channel or group message links
 • You can send any type of links for attaching
 
-Made by @FayasNoushad
-"""
-ABOUT_TEXT = """
+Made by @FayasNoushad"""
+ABOUT_TEXT = """**About Me**
+
 - **Bot :** `Attach Bot`
 - **Creator :** [Fayas](https://telegram.me/TheFayas)
 - **Channel :** [Fayas Noushad](https://telegram.me/FayasNoushad)
@@ -45,29 +38,36 @@ ABOUT_TEXT = """
 - **Server :** [Heroku](https://heroku.com)
 """
 START_BUTTONS = InlineKeyboardMarkup(
-        [[
-        InlineKeyboardButton('Channel', url='https://telegram.me/FayasNoushad'),
-        InlineKeyboardButton('Feedback', url='https://telegram.me/TheFayas')
-        ],[
-        InlineKeyboardButton('Help', callback_data='help'),
-        InlineKeyboardButton('About', callback_data='about'),
-        InlineKeyboardButton('Close', callback_data='close')
-        ]]
-    )
+    [
+        [
+            InlineKeyboardButton('Channel', url='https://telegram.me/FayasNoushad'),
+            InlineKeyboardButton('Feedback', url='https://telegram.me/TheFayas')
+        ],
+        [
+            InlineKeyboardButton('Help', callback_data='help'),
+            InlineKeyboardButton('About', callback_data='about'),
+            InlineKeyboardButton('Close', callback_data='close')
+        ]
+    ]
+)
 HELP_BUTTONS = InlineKeyboardMarkup(
-        [[
-        InlineKeyboardButton('Home', callback_data='home'),
-        InlineKeyboardButton('About', callback_data='about'),
-        InlineKeyboardButton('Close', callback_data='close')
-        ]]
-    )
+    [
+        [
+            InlineKeyboardButton('Home', callback_data='home'),
+            InlineKeyboardButton('About', callback_data='about'),
+            InlineKeyboardButton('Close', callback_data='close')
+        ]
+    ]
+)
 ABOUT_BUTTONS = InlineKeyboardMarkup(
-        [[
-        InlineKeyboardButton('Home', callback_data='home'),
-        InlineKeyboardButton('Help', callback_data='help'),
-        InlineKeyboardButton('Close', callback_data='close')
-        ]]
-    )
+    [
+        [
+            InlineKeyboardButton('Home', callback_data='home'),
+            InlineKeyboardButton('Help', callback_data='help'),
+            InlineKeyboardButton('Close', callback_data='close')
+        ]
+    ]
+)
 
 
 @Bot.on_callback_query()
