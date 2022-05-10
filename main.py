@@ -5,15 +5,16 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 
 Bot = Client(
-    "Telegram Attach Bot",
-    bot_token = os.environ["BOT_TOKEN"],
-    api_id = int(os.environ["API_ID"]),
-    api_hash = os.environ["API_HASH"]
+    "Attach Bot",
+    bot_token=os.environ.get("BOT_TOKEN"),
+    api_id=int(os.environ.get"API_ID")),
+    api_hash=os.environ.get("API_HASH")
 )
 
 
 START_TEXT = """Hello {},
-I am a media or file in a message attach bot. I can attach photo, video, audio etc. using their public links in a message.
+I am a media or file in a message attach bot. \
+I can attach photo, video, audio etc. using their public links in a message.
 
 Made by @FayasNoushad"""
 HELP_TEXT = """**More Help**
@@ -27,16 +28,16 @@ HELP_TEXT = """**More Help**
 • You can send any type of links for attaching
 
 Made by @FayasNoushad"""
+
 ABOUT_TEXT = """**About Me**
 
 - **Bot :** `Attach Bot`
-- **Creator :** [Fayas](https://telegram.me/TheFayas)
+- **Developer :** [Fayas](https://github.com/FayasNoushad)
 - **Channel :** [Fayas Noushad](https://telegram.me/FayasNoushad)
-- **Source :** [Click here](https://github.com/FayasNoushad/Attach-Bot)
+- **Source :** [Attach-Bot](https://github.com/FayasNoushad/Attach-Bot)
 - **Language :** [Python3](https://python.org)
-- **Library :** [Pyrogram](https://pyrogram.org)
-- **Server :** [Heroku](https://heroku.com)
-"""
+- **Library :** [Pyrogram](https://pyrogram.org)"""
+
 START_BUTTONS = InlineKeyboardMarkup(
     [
         [
@@ -50,6 +51,7 @@ START_BUTTONS = InlineKeyboardMarkup(
         ]
     ]
 )
+
 HELP_BUTTONS = InlineKeyboardMarkup(
     [
         [
@@ -59,6 +61,7 @@ HELP_BUTTONS = InlineKeyboardMarkup(
         ]
     ]
 )
+
 ABOUT_BUTTONS = InlineKeyboardMarkup(
     [
         [
