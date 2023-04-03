@@ -15,8 +15,7 @@ Bot = Client(
 START_TEXT = """Hello {},
 I am a media or file in a message attach bot. \
 I can attach photo, video, audio etc. using their public links in a message.
-
-Made by @FayasNoushad"""
+"""
 HELP_TEXT = """**More Help**
 
 **Steps :-**
@@ -25,15 +24,14 @@ HELP_TEXT = """**More Help**
 
 **Tips :-**
 • Use Telegram public channel or group message links
-• You can send any type of links for attaching
-
-Made by @FayasNoushad"""
+• You can send any type of links for attaching"""
 
 ABOUT_TEXT = """**About Me**
 
 - **Bot :** `Attach Bot`
-- **Developer :** [Fayas](https://github.com/FayasNoushad)
-- **Channel :** [Fayas Noushad](https://telegram.me/FayasNoushad)
+- **Developer :**
+  • [Telegram](https://telegram.me/FayasNoushad)
+  • [GitHub](https://github.com/FayasNoushad)
 - **Source :** [Attach-Bot](https://github.com/FayasNoushad/Attach-Bot)
 - **Language :** [Python3](https://python.org)
 - **Library :** [Pyrogram](https://pyrogram.org)"""
@@ -41,8 +39,7 @@ ABOUT_TEXT = """**About Me**
 START_BUTTONS = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton('Channel', url='https://telegram.me/FayasNoushad'),
-            InlineKeyboardButton('Feedback', url='https://telegram.me/TheFayas')
+            InlineKeyboardButton('Feedback', url='https://telegram.me/FayasNoushad')
         ],
         [
             InlineKeyboardButton('Help', callback_data='help'),
